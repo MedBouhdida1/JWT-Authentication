@@ -3,13 +3,14 @@ package com.hungrycoder.spring.repository;
 import java.util.Optional; // Import Optional for handling optional values
 
 import com.hungrycoder.spring.models.User; // Import User model
-import org.springframework.data.mongodb.repository.MongoRepository; // Import MongoRepository for MongoDB operations
+import jakarta.persistence.Id;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  * Repository interface for accessing User entities in the MongoDB database.
  * It extends MongoRepository, providing CRUD operations for User objects.
  */
-public interface UserRepository extends MongoRepository<User, String> {
+public interface UserRepository extends JpaRepository<User, Id> {
 
   /**
    * Find a User by their username.
